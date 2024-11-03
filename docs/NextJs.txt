@@ -1,0 +1,24 @@
+NextJs
+
+- Init dự án
+    npm install -g pnpm
+    npx create-next-app@latest an1-next —example "https://github.com/vercel/next-learn/tree/main/dashboard/starter-example" --use-pnpm
+    pnpm I
+    pnpm dev
+
+- Styling
+    - Tailwind
+    - CSS modules -> Tự động tạo class name local cho DOM của component
+		import styles from "@app/ui/home.module.css"
+		<div className={styles.shape}></div>
+    - clsx -> toggle class name
+		import clsx from "clsx"
+        <span className={clsx(
+            "color: red",
+            {
+                "bg-red": status === "error",
+                "bg-success": status === "success",
+            }
+        )}/>
+
+		
