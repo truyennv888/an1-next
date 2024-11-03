@@ -1,17 +1,17 @@
 NextJs
 
-- Init dự án
+1. Init dự án
     npm install -g pnpm
     npx create-next-app@latest an1-next —example "https://github.com/vercel/next-learn/tree/main/dashboard/starter-example" --use-pnpm
     pnpm I
     pnpm dev
 
-- Styling
-    - Tailwind
-    - CSS modules -> Tự động tạo class name local cho DOM của component
+2. Styling
+    2.1. Tailwind
+    2.2. CSS modules -> Tự động tạo class name local cho DOM của component
 		import styles from "@app/ui/home.module.css"
 		<div className={styles.shape}></div>
-    - clsx -> toggle class name
+    2.3. clsx -> toggle class name
 		import clsx from "clsx"
         <span className={clsx(
             "color: red",
@@ -20,5 +20,26 @@ NextJs
                 "bg-success": status === "success",
             }
         )}/>
+    2.4. import css hoặc scss thông thường
+    2.5. sử dụng thư viện css in js như styled-components
+
+3. Font and Image
+    3.1. Font google
+        Tạo file fonts.ts trong app/ui
+            import { Inter } from "next/font/google"
+            export const inter = Inter({ subsets: ['latin] })
+        Sử dụng
+            import { inter } from "@/app/ui/fonts"
+            <body className={inter.className}></body>
+    3.2. tự động tối ưu (lazy, reponsive) với nuxt/image
+        import Image from "nuxt/image"
+        <Image
+            src="/hero-mobile.png"
+            width={560}
+            height={620}
+            className="block md:hidden"
+            alt="Ảnh"
+        />
+
 
 		
