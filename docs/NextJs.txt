@@ -40,6 +40,19 @@ NextJs
             className="block md:hidden"
             alt="Ảnh"
         />
+4. Layout và Pages
+    Dùng file-system routing folders để tạo routes lồng nhau. Page.tsx là file chưa DOM của route có tên là tên folder.
+    Tạo UIs cho page route bằng layout.tsx
+        Layout to share UI across multiple pages
+        Thêm các meta head dùng chung cho site ở Root Layout
+5. Navigation
+    Dùng next/link component để điều hướng giữa các trang -> Không tải lại toàn bộ trang (Muốn tải lại toàn bộ trạng dùng thẻ a)
+        Khi <Link/> xuất hiện ở đâu thì trình duyệt sẽ tự động tại nội dung của route trong link ở chế độ nền, khi chuyển trang sẽ gần như có nội dung ngây lập tức.
+    Dùng usePathname() hook để active nav hiện tại
+        usePathname là hook nên khi sử dụng cần khai báo 'use client';
+        
+
+
 
 
 		
