@@ -76,6 +76,8 @@ NextJs
             Loading sẽ có tác dụng đối với các page con trong thư mục chính
             Nếu dữ dụng route group (overview) thì sẽ chỉ app dụng lên những page trong thư mục route group
         Component thì thực hiện bằng Suspense Component
+            Dùng Group Component để thực hiện Suspense nhiều component dùng loại. (items)
+            
     
 
     
