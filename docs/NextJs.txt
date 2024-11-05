@@ -41,16 +41,47 @@ NextJs
             alt="Ảnh"
         />
 4. Layout và Pages
-    Dùng file-system routing folders để tạo routes lồng nhau. Page.tsx là file chưa DOM của route có tên là tên folder.
-    Tạo UIs cho page route bằng layout.tsx
+    4.1. Dùng file-system routing folders để tạo routes lồng nhau. Page.tsx là file chưa DOM của route có tên là tên folder.
+    4.2. Tạo UIs cho page route bằng layout.tsx
         Layout to share UI across multiple pages
         Thêm các meta head dùng chung cho site ở Root Layout
 5. Navigation
-    Dùng next/link component để điều hướng giữa các trang -> Không tải lại toàn bộ trang (Muốn tải lại toàn bộ trạng dùng thẻ a)
+    5.1. Dùng next/link component để điều hướng giữa các trang -> Không tải lại toàn bộ trang (Muốn tải lại toàn bộ trạng dùng thẻ a)
         Khi <Link/> xuất hiện ở đâu thì trình duyệt sẽ tự động tại nội dung của route trong link ở chế độ nền, khi chuyển trang sẽ gần như có nội dung ngây lập tức.
-    Dùng usePathname() hook để active nav hiện tại
+    5.2. Dùng usePathname() hook để active nav hiện tại
         usePathname là hook nên khi sử dụng cần khai báo 'use client';
-        
+6. Init database
+    Dùng Vercel.com connect đến Github repo để Deloy dự án lên Vercel host
+    Tạo Database PostgresSQL trên Vercel
+    Lấy config data ở Menu > Storge > .env.local
+    Tạo .evn trong dự án
+    Run seed route để khởi tạo Table và Data cho Database
+7. Fetch Data
+    7.1. API layer
+        Dùng cho request client đến server
+        Dùng cho request đến 3th service API
+    7.2. SQL or ORM
+        Tạo endpoint API ở NextJs
+        Dùng trong React Server Components
+    7.3. Using Server Component to fetch data
+        Hỗ trợ promises nên dùng async/await để fetch data. Không cần sử dụng useEffect, useState
+        Login được xứ lý ở Server và gửi kết quả về client -> Nên có thể lấy data luôn mà không cần thông qua API layer
+    7.4. Using SQL
+        Sử dụng @vercel/postgres SDK để query
+8. Streaming, loading.txs, Suspense, loading skeleton
+    Chia route thành nhiều chunks và stream dần dần các chunks đã sẳn sàng đến Client mà không cần đợi đến khi tất cả các thành phần của page được load hết
+    Khắc phục được tình trạng slow data Fetch
+    Có 2 cách thực hiện stream
+        Page thì thực hiện bằng loading.tsx
+            Loading sẽ có tác dụng đối với các page con trong thư mục chính
+            Nếu dữ dụng route group (overview) thì sẽ chỉ app dụng lên những page trong thư mục route group
+        Component thì thực hiện bằng Suspense Component
+    
+
+    
+
+    
+
 
 
 
