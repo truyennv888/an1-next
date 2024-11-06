@@ -77,7 +77,21 @@ NextJs
             Nếu dữ dụng route group (overview) thì sẽ chỉ app dụng lên những page trong thư mục route group
         Component thì thực hiện bằng Suspense Component
             Dùng Group Component để thực hiện Suspense nhiều component dùng loại. (items)
-            
+9. Partial Prerendering
+    Kết hợp Static, Dynamic rendering, Stream trong cùng một route
+    Dùng Suspense trì hoãn những phần Render cho đến khi chúng thoả mãn điều kiện Render (data is loaded)
+    Suspense fallback sẽ được thêm vào HTML Static content -> Tạo ra các Static shell -> Dynamic content trì hoãn việc render lại cho đến khi User visit route
+    NOTE: Partial Prerendering đang được thử nghiệm.
+    9.1. Thực hiện Partial Prerendering
+        Config
+            const nextConfig = {
+                experimental: {
+                    ppr: 'incremental',
+                },
+            };
+        Quy định render trong layout.tsx
+            export const experimental_ppr = true;
+        
     
 
     
