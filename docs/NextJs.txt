@@ -103,12 +103,19 @@ NextJs
     Dùng redirect để chuyến hướng đến trang kết qủa
         import { redirect } from 'next/navigation';
 12. Handle error
-    Dùng file error.tsx để hanlde các exception cho route chưa file
+    Dùng file error.tsx để handle các exception cho route chứa nó
         error.tsx là function chưa 2 tham số
             error là nội dung lỗi
             reset() là function dùng để re-rendering lại trang hiện tại nới mà error xuất hiện
         error.tsx handle luôn cả 404 của route chưa nó
-    
+    Dùng file not-found.tsx để handle 404 error cho các route chứa nó
+        Dùng notFound() function để chỉ định 404 error khi dữ liệu không tìm thấy
+            import { notFound } from 'next/navigation';
+            if(!invoice){
+                notFound();
+            }
+
+
         
     
 
