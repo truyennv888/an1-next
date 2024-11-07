@@ -19,11 +19,12 @@ import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
 
 export default function NavLinks() {
+  const pathname = usePathname();
+
   return (
     <>
       {links.map((link) => {
         const LinkIcon = link.icon;
-        const pathname = usePathname();
         return (
           <Link
             key={link.name}
