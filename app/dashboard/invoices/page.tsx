@@ -6,6 +6,7 @@ import { lusitana } from '@/app/ui/fonts';
 import { InvoicesTableSkeleton } from '@/app/ui/skeletons';
 import { Suspense } from 'react';
 import { fetchInvoicesPages } from '@/app/lib/data';
+import { notFound } from 'next/navigation';
  
 export default async function Page(props: {
   searchParams?: Promise<{
@@ -19,6 +20,10 @@ export default async function Page(props: {
   const currentPage = Number(searchParams?.page) || 1;
 
   const totalPages = await fetchInvoicesPages(query);
+
+  if(currentPage>totalPages){
+    notFound();
+  }
 
   return (
     <div className="w-full">
