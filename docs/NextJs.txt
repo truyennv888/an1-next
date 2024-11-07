@@ -102,6 +102,13 @@ NextJs
         import { revalidatePath } from 'next/cache';
     Dùng redirect để chuyến hướng đến trang kết qủa
         import { redirect } from 'next/navigation';
+12. Handle error
+    Dùng file error.tsx để hanlde các exception cho route chưa file
+        error.tsx là function chưa 2 tham số
+            error là nội dung lỗi
+            reset() là function dùng để re-rendering lại trang hiện tại nới mà error xuất hiện
+        error.tsx handle luôn cả 404 của route chưa nó
+    
         
     
 
