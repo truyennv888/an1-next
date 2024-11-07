@@ -91,6 +91,17 @@ NextJs
             };
         Quy định render trong layout.tsx
             export const experimental_ppr = true;
+10. Search and Pagination
+    Sử dụng useSearchParams, usePathname, useRouter của next/navigation để thực hiện Search
+        useSearchParams() lấy params từ URL
+        usePathname() lấy route URL không kèm param
+        { replace } = useRouter() để redirect đến URL đích
+11. Mutating Data
+    Dùng Server Action để submit trực tiếp form data từ client mà không cần sử dụng API
+    Dùng revalidatePath để load lại cache với dữ liệu mới
+        import { revalidatePath } from 'next/cache';
+    Dùng redirect để chuyến hướng đến trang kết qủa
+        import { redirect } from 'next/navigation';
         
     
 
