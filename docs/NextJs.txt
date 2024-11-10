@@ -122,6 +122,24 @@ NextJs
             "use client";
             import { useActionState } from "react";
         useActionState sẽ trả về 2 thông số là state (trạng thái lỗi) và formAction (hành động trên form)
+14. Authentication
+    Sử dụng NextAuth.js để quản lý sessions cho việc login và logout
+    NextAuth.js cho phép cung cấp nhiều providers để login như:
+        Login bằng username, password
+        Login bằng Google, Github, ...
+    Thực hiện
+        Cài đặt NextAuth.js
+            pnpm i next-auth@beta
+        Config .env AUTH_SECRET
+            openssl rand -base64 32
+        Tạo file config auth.config.ts để kiểm tra login và redirect đến page thích hợp
+        Tạo middleware.ts áp dụng auth cho dự án, và config các đường dẫn được áp dụng hoặc ignore
+        Export đối tượng auth, signIn, signOut và Cung cấp providers cho NextAuth auth.ts
+        Tạo action authenticate cho form login
+        Dùng useActionState để gắn action và validate form cho page login
+        Gắn action signOut cho menu logout
+
+
 
 
         
