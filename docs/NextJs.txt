@@ -114,6 +114,14 @@ NextJs
             if(!invoice){
                 notFound();
             }
+13. Imporoving Accessibility
+    Client side:
+        required for FORM tag
+    Server Side
+        Để có thể valid form ở Server side thì cần sử dụng hook useActionState và khai báo component form thành "use client"
+            "use client";
+            import { useActionState } from "react";
+        useActionState sẽ trả về 2 thông số là state (trạng thái lỗi) và formAction (hành động trên form)
 
 
         
