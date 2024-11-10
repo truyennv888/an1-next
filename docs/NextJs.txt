@@ -138,7 +138,31 @@ NextJs
         Tạo action authenticate cho form login
         Dùng useActionState để gắn action và validate form cho page login
         Gắn action signOut cho menu logout
-
+15. Metadata
+    Open Graph image & favicon -> Copy bỏ vào thư mục /app sẽ tự được thêm vào head
+    Thêm metadata cho route -> export object metadata trong page.tsx hoặc layout.txs
+        import { Metadata } from 'next';
+        export const metadata: Metadata = {
+            title: 'Acme Dashboard',
+            description: 'The official Next.js Course Dashboard, built with App Router.',
+            metadataBase: new URL('https://next-learn-dashboard.vercel.sh'),
+        };
+    Có thể dùng template ở layout.tsx và truyền biến để tránh lập lại meta ở route page.txs
+        layout.tsx
+            import { Metadata } from 'next';
+            export const metadata: Metadata = {
+                title: {
+                    template: '%s | Acme Dashboard',
+                    default: 'Acme Dashboard',
+                },
+                description: 'The official Next.js Learn Dashboard built with App Router.',
+                metadataBase: new URL('https://next-learn-dashboard.vercel.sh'),
+            };
+        page.tsx
+            import { Metadata } from 'next';
+            export const metadata: Metadata = {
+                title: 'Invoices',
+            };
 
 
 
