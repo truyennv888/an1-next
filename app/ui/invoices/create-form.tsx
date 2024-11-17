@@ -11,6 +11,7 @@ import {
 import { Button } from '@/app/ui/button';
 import { createInvoice, State } from '@/app/lib/action';
 import { useActionState } from 'react';
+import Editor from '@/components/Editor';
 
 export default function Form({ customers }: { customers: CustomerField[] }) {
   const initialState: State = {
@@ -80,6 +81,17 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
                     {error}
                   </p>
                 ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="mb-4">
+          <label htmlFor="amount" className="mb-2 block text-sm font-medium">
+            Content
+          </label>
+          <div className="relative mt-2 rounded-md">
+            <div className="relative">
+              <Editor/>
             </div>
           </div>
         </div>

@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
   // experimental: {
   //   ppr: 'incremental',
   // },
+  // pageExtensions: ['html', 'js', 'jsx', 'ts', 'tsx'],
 }
 
 export default nextConfig
